@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <style type="text/css">
+    body {
+        background: #0dcfff;
+        background-image:url('learnyou_background.png');
+    }
+
+    #mainContent {
+        border: 1px solid black;
+        width: 90%;
+        min-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #FFF;
+        padding: 6px;
+    }
+    </style>
+
+    <title>Learn You A Origami</title>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+      google.load("swfobject", "2.1");
+    </script>
+    <script src="stepreplay.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    function setupStepReplay() {
+        //console.debug('setupStepReplay() called');
+        // format: [["youtube id", "title", ["time 1", ...]], ...
+        videos = [
+            {'id':'4ifNQmL6Gic', 'title':'T-Rex', 'bookmarks':[0, 12, 24, 35, 51, 65, 73, 88, 115, 128, 138, 147, 153, 157, 164, 180, 190, 203, 212, 221, 229, 272, 277, 287, 295, 305, 326, 335, 345, 357, 366, 380, 394, 408, 419, 430, 454, 467, 475, 505, 516, 524, 534, 543, 547, 555, 566, 571, 578, 585, 590, 599, 607, 620, 635, 640, 662, 680], 'desc':["A completed T-Rex", "Fold in half diagonally.", "Fold in half diagonally again.", "Fold and unfold in half horizontally and vertically.", "Fold and unfold in half horizontally and vertically.", "Bring all four corners together forming a Preliminary Fold.", "Fold flaps to center.", "Petal-fold front and back flaps to form a Bird Base.", "Flip the paper over and fold flap to the center.", "Fold the other flap to the center.", "Petal-fold the flaps to form a Bird Base on this side.", "Petal-fold the flaps to form a Bird Base on this side.", "Fold down.", "Make a rabbit ear on the top flap.", "Rabbit ear the other side.", "Pinch down to form a sundial.", "Fold down to the right.", "Repeat rabbit folds on the other side.", "Repeat rabbit folds on the other side.", "Pinch down to form a sundial.", "Fold the top corner down to the crease line, and sink the top corner.", "Press down on the crease.", "Fold up rabbit ear flaps, and unfold back flaps.", "Bring this flap up.", "Reverse-fold and bring this flap to the right.", "Fold along the edge, and repeat on the other side.", "Reverse-fold.", "Unfold this tucked away flap.", "Repeat on the other side.", "Fold at angle bisector, repeat behind.", "Fold at angle bisector, repeat behind.", "Reverse-fold.", "Shape the head.", "Fold this flap to the left.", "Fold the flap down.", "Unfold and open the flap and fold as shown.", "Fold leg back down.", "Repeat behind. Fold this flap to the left and down.", "Unforld and open the flap and fold as shown.", "Fold down the tail.", "Reverse fold the tail.", "Valley-fold to narrow the tail.", "Repeat on the other side.", "Fold down."]},
+            {'id':'FSijU52XJ7w', 'title':'Basic Crane', 'bookmarks':[0, 28, 51, 69, 92, 105, 124, 147, 168, 198, 215, 224, 245, 279, 321, 367, 377, 389, 408, 435, 444, 476, 492, 501]},
+            //{'id':'4IzUXJSvB_g', 'title':'Ninja Star', 'bookmarks':[]},
+            //{'id':'tSMLk_zGzf4', 'title':'Balloon (Water Bomb)', 'bookmarks':[]},
+            //{'id':'v1bv0RoJjzY', 'title':'Rocket', 'bookmarks':[]},
+            //{'id':'X4L5nDDgEEk', 'title':'Butterfly', 'bookmarks':[]},
+            //{'id':'JAwDT1VWYcY', 'title':'Square Gift Box', 'bookmarks':[]},
+            //{'id':'EZbZJEgFEDw', 'title':'Flapping Bird', 'bookmarks':[]},
+            //{'id':'Wo9pQmOYkZw', 'title':'Inflatable Bunny', 'bookmarks':[]},
+            //{'id':'uoFTpcjVzI7k', 'title':'Pentagon Gift Box', 'bookmarks':[]},
+            //{'id':'FkCWqYOTn6c', 'title':'Cube', 'bookmarks':[]},
+            //{'id':'H7qE_Tc8e4g', 'title':'Icosahedron (d20 die)', 'bookmarks':[]},
+            //{'id':'8nROdA_wAQU', 'title':'Peacock', 'bookmarks':[]},
+            {'id':'mPQqU8FA9LU', 'title':'Dodecahedron', 'bookmarks':[0, 9, 16, 31, 49, 66, 77, 88, 108, 117, 129, 161, 170, 175, 187, 196, 222, 238, 267, 293, 320, 343]},
+            {'id':'cO19EvZSjiQ', 'title':'Rabbit', 'bookmarks':[0, 17, 31, 38, 47, 54, 66, 78, 89, 101, 113, 130, 140, 150, 161, 166, 196, 209, 219, 237, 250, 257, 273, 285, 307, 317, 325, 338, 352, 366]},
+            {'id':'A8EyLFWXV_0', 'title':'Magic Rose Cube', 'bookmarks':[0, 25, 34, 47, 61, 72, 86, 102, 120, 135, 144, 155, 174, 185, 194, 208, 222, 230, 236, 250, 267, 280, 303, 320, 332, 345, 359, 393, 403, 410, 427, 432, 440, 454, 477]},
+            {'id':'-30n1Drgp-s', 'title':'Little Terrier', 'bookmarks':[0, 12, 20, 27, 37, 56, 65, 78, 81, 105, 132, 144, 154, 159, 170, 183, 191, 212, 226, 243, 248, 263, 278, 313, 341, 346]},
+            {'id':'hVK03dZwyFE', 'title':'Basset Hound', 'bookmarks':[0, 11, 20, 34, 47, 70, 90, 102, 109, 117, 124, 132, 139, 144, 183, 186, 199, 210, 218, 238, 243, 244, 252, 259, 268, 280, 299, 319, 354, 358, 365, 370, 377, 378, 408, 411, 420, 434, 438, 441, 453, 460, 466, 477, 486, 503, 509, 515, 527, 533, 541, 552, 560, 570, 575, 593, 611, 618, 630, 634, 639, 649, 666, 689, 706, 740, 747, 773, 782, 792, 798, 811, 828, 838, 856, 896, 906, 944, 960, 978, 994, 1007, 1021, 1036, 1053, 1070, 1088, 1096]},
+            {'id':'LHdCO2_5_Mo', 'title':'Cat', 'bookmarks':[0, 15, 26, 37, 50, 68, 77, 93, 101, 116, 125, 130, 142, 153, 158, 170, 177, 181, 199, 215, 219, 224, 245, 265, 276, 279, 289, 295, 311, 318, 330, 350, 360, 375, 389, 405, 420, 430, 439, 463, 483], 'desc':['Step one description', 'Step two description', '', 'Step four desc.']},
+            {'id':'uoFTcjVzI7k', 'title':'Pentagonal Gift Box', 'bookmarks':[0, 16, 26, 48, 59, 86, 103, 131, 153, 182, 200, 237, 336, 374, 396, 450, 498, 511]}
+        ];
+
+        origami_sr = new StepReplay('origami', videos, 480, 295, true);
+    }
+
+
+    // This function is automatically called by the player once it loads
+    function onYouTubePlayerReady() {
+        origami_sr.onYouTubePlayerReady();
+    }
+
+    google.setOnLoadCallback(setupStepReplay);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;" onload="">
+  <div id="mainContent">
+    <div><img src="learnyou_title.png" /></div>
+
+    <div style="text-align: right;">
+    Select an origami tutorial:
+    <select id="origami_videoSelect" onchange="origami_sr.loadVideo(this.value);">
+    </select>
+    </div>
+
+    <div id="origami_titleDiv" style="font-size: 18pt;">&nbsp;</div>
+
+    <div>
+    <div style="float: right;">
+        Steps:<br />
+        <select id="origami_stepsSelect" size="16" style="width: 170px; max-width: 170px;" onclick='origami_sr.jumpToStep(this.value, false)'>
+        </select>
+    </div>
+    <div id="origami_ytPlayerDiv">Loading...</div>
+    </div>
+
+    <div>
+    <div id="origami_currentStepTextDiv" class="currentStep" style="font-size: 14pt; height: 60px;">&nbsp;</div>
+    <div>Next step in <span id="origami_stepCountdownDiv">&nbsp;</span>.</div>
+    </div>
+
+    <div id="controlPanel" style="text-align: center;">
+        <input type="button" value="Previous" onclick="origami_sr.previousStep()"/>
+        <input type="button" value="Replay Step" onclick="origami_sr.replayStep()"/>
+        <input type="button" value="Play" onclick="origami_sr.playPause()" id="origami_playPauseButton" style="width: 60px;" />
+        <input type="button" value="Next" onclick="origami_sr.nextStep()"/><br />
+
+        <input type="checkbox" id="origami_pauseOnNewStep" checked onclick="origami_sr.pauseOnNewStep = this.checked;" /><label for="origami_pauseOnNewStep">Pause after new step.</label><br />
+        <input type="checkbox" id="origami_loopCurrentStep" onclick="origami_sr.loopCurrentStep = this.checked;" /><label for="origami_loopCurrentStep">Loop the current step.</label><br />
+    </div>
+
+    <div style="height: 40px;">&nbsp;</div>
+
+
+    <fieldset>
+    <legend>Editor Panel</legend>
+    <div id="origami_editorPanel">
+        <table border="0" style="margin-left: auto; margin-right: auto;">
+        <tr><td>
+        <input type="button" style="width: 50px" value="< 10s" onclick="origami_sr.seekBack(10);" />
+        <input type="button" style="width: 50px" value="< 1s" onclick="origami_sr.seekBack(1);" />
+        <input type="button" style="width: 50px" value="< 0.1s" onclick="origami_sr.seekBack(0.1);" />
+        </td><td style="border: 1px solid black; padding: 4px; align: center;">
+        <span id="origami_currentSeek">00:00</span><br />
+        <input type="button" value="Insert Step" onclick="origami_sr.insertStep()" style="margin: 4px"/>
+        </td><td>
+        <input type="button" style="width: 50px" value="0.1s >" onclick="origami_sr.seekForward(0.1);" />
+        <input type="button" style="width: 50px" value="1s >" onclick="origami_sr.seekForward(1);" />
+        <input type="button" style="width: 50px" value="10s >" onclick="origami_sr.seekForward(10);" />
+        </td></td></tr>
+        </table><br />
+        <br />
+
+        Width: <input type="text" size="3" onkeyup='markIfChanged(this, origami_sr.width);' id="origami_videoWidth" /> Height <input type="text" size="3" onkeyup='markIfChanged(this, origami_sr.height);' id="origami_videoHeight" /> <input type="button" value="Set Size" onclick="origami_sr.setVideoSize(document.getElementById('origami_videoWidth').value, document.getElementById('origami_videoHeight').value);" /><br />
+        <br />
+
+        Add New YouTube Video URL to List:<br />
+        <input type="text" size="40" id="newVideoUrl" /> <input type="button" value="Add Video" onclick="origami_sr.addNewVideo(document.getElementById('newVideoUrl').value);" /><br />
+        <br />
+
+        Title:<br />
+        <input type="text" size="40" id="origami_newTitleEdit" onkeyup='markIfChanged(this, origami_sr.curVid.title);' /> <input type="button" value="Edit Title" onclick="origami_sr.editVideoTitle(document.getElementById('origami_newTitleEdit').value);" /><br />
+        <br />
+
+        Current Step's Description:<br />
+        <input type="text" size="40" onkeyup='markIfChanged(this, origami_sr.getStepDesc());' id="origami_newStepEdit" /> <input type="button" value="Edit Step Desc." onclick="origami_sr.editStepDesc(origami_sr.getCurrentStep(), document.getElementById('origami_newStepEdit').value);" /><br />
+        <br />
+
+        Raw Bookmarks Data:<br />
+        <textarea cols="80" rows="5" onkeyup='markChanged(this, event);' id="origami_rawBookmarksData"></textarea><br />
+        <input type="button" value="Edit Bookmarks" onclick="origami_sr.editBookmarks(document.getElementById('origami_rawBookmarksData').value);" />
+        <input type="button" value="Refresh" onclick="origami_sr.populateRawBookmarksField();" /><br />
+        <br />
+
+        Raw Step Description Data (one per line):<br />
+        <textarea cols="80" rows="5" onkeyup='markChanged(this, event);' id="origami_rawStepDescData"></textarea><br />
+        <input type="button" value="Edit Step Descriptions" onclick="origami_sr.editAllStepDesc(document.getElementById('origami_rawStepDescData').value);" />
+        <input type="button" value="Refresh" onclick="origami_sr.populateRawStepDescField();" /><br />
+        <br />
+
+        Raw Video Order (one per line):<br />
+        <textarea cols="80" rows="5" onkeyup='markChanged(this, event);' id="origami_rawVideoOrder"></textarea><br />
+        <input type="button" value="Edit Step Descriptions" onclick="origami_sr.editVideoOrder(document.getElementById('origami_rawVideoOrder').value);" />
+        <input type="button" value="Refresh" onclick="origami_sr.populateRawVideoOrder();" /><br />
+        <br />
+
+        StepReplay Object's Name:<br />
+        <input type="text" id="origami_stepReplayObjName" size="40" value="stepReplay" /><br />
+        <br />
+
+        Copy/paste JavaScript Code:<br />
+        <textarea cols="80" rows="5" id="origami_rawCode"></textarea><br />
+    </div>
+    </fieldset>
+
+    <div>
+        <a href="stepreplay.zip">Download the StepReplay</a> JavaScript library that adds steps to YouTube videos.
+    </div>
+
+  </div>
+
+  </body>
+</html>
